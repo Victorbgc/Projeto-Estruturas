@@ -1,1 +1,140 @@
+#include <stdio.h>
+#include <stdlib.h>
 
+typedef struct sBaralho{
+	int num;
+	char naipe[10];
+} Baralho;
+
+void preencherBaralho(Deque d){
+	d.cartas[0].num = 1;
+	d.cartas[0].naipe[10] = 'paus';
+	d.cartas[1].num = 2;
+	d.cartas[1].naipe[10] = 'paus';
+	d.cartas[2].num = 3;
+	d.cartas[2].naipe[10] = 'paus';
+	d.cartas[3].num = 4;
+	d.cartas[3].naipe[10] = 'paus';
+	d.cartas[4].num = 5;
+	d.cartas[4].naipe[10] = 'paus';
+	d.cartas[5].num = 6;
+	d.cartas[5].naipe[10] = 'paus';
+	d.cartas[6].num = 7;
+	d.cartas[6].naipe[10] = 'paus';
+	d.cartas[7].num = 8;
+	d.cartas[7].naipe[10] = 'paus';
+	d.cartas[8].num = 9;
+	d.cartas[8].naipe[10] = 'paus';
+	d.cartas[9].num = 10;
+	d.cartas[9].naipe[10] = 'paus';
+	d.cartas[10].num = 11;
+	d.cartas[10].naipe[10] = 'paus';
+	d.cartas[11].num = 12;
+	d.cartas[11].naipe[10] = 'paus';
+	d.cartas[12].num = 13;
+	d.cartas[12].naipe[10] = 'paus';
+	d.cartas[13].num = 1;
+	d.cartas[13].naipe[10] = 'espadas';
+	d.cartas[15].num = 2;
+	d.cartas[14].naipe[10] = 'espadas';
+	d.cartas[15].num = 3;
+	d.cartas[15].naipe[10] = 'espadas';
+	d.cartas[16].num = 4;
+	d.cartas[16].naipe[10] = 'espadas';
+	d.cartas[17].num = 5;
+	d.cartas[17].naipe[10] = 'espadas';
+	d.cartas[18].num = 6;
+	d.cartas[18].naipe[10] = 'espadas';
+	d.cartas[19].num = 7;
+	d.cartas[19].naipe[10] = 'espadas';
+	d.cartas[20].num = 8;
+	d.cartas[20].naipe[10] = 'espadas';
+	d.cartas[21].num = 9;
+	d.cartas[21].naipe[10] = 'espadas';
+	d.cartas[22].num = 10;
+	d.cartas[22].naipe[10] = 'espadas';
+	d.cartas[23].num = 11;
+	d.cartas[23].naipe[10] = 'espadas';
+	d.cartas[24].num = 12;
+	d.cartas[24].naipe[10] = 'espadas';
+	d.cartas[25].num = 13;
+	d.cartas[25].naipe[10] = 'espadas';
+	d.cartas[26].num = 1;
+	d.cartas[26].naipe[10] = 'copas';
+	d.cartas[27].num = 2;
+	d.cartas[27].naipe[10] = 'copas';
+	d.cartas[28].num = 3;
+	d.cartas[28].naipe[10] = 'copas';
+	d.cartas[29].num = 4;
+	d.cartas[29].naipe[10] = 'copas';
+	d.cartas[30].num = 5;
+	d.cartas[30].naipe[10] = 'copas';
+	d.cartas[31].num = 6;
+	d.cartas[31].naipe[10] = 'copas';
+	d.cartas[32].num = 7;
+	d.cartas[32].naipe[10] = 'copas';
+	d.cartas[33].num = 8;
+	d.cartas[33].naipe[10] = 'copas';
+	d.cartas[34].num = 9;
+	d.cartas[34].naipe[10] = 'copas';
+	d.cartas[35].num = 10;
+	d.cartas[35].naipe[10] = 'copas';
+	d.cartas[36].num = 11;
+	d.cartas[36].naipe[10] = 'copas';
+	d.cartas[37].num = 12;
+	d.cartas[37].naipe[10] = 'copas';
+	d.cartas[38].num = 13;
+	d.cartas[38].naipe[10] = 'copas';
+	d.cartas[39].num = 1;
+	d.cartas[39].naipe[10] = 'ouro';
+	d.cartas[40].num = 2;
+	d.cartas[40].naipe[10] = 'ouro';
+	d.cartas[41].num = 3;
+	d.cartas[41].naipe[10] = 'ouro';
+	d.cartas[42].num = 4;
+	d.cartas[42].naipe[10] = 'ouro';
+	d.cartas[43].num = 5;
+	d.cartas[43].naipe[10] = 'ouro';
+	d.cartas[44].num = 6;
+	d.cartas[44].naipe[10] = 'ouro';
+	d.cartas[45].num = 7;
+	d.cartas[45].naipe[10] = 'ouro';
+	d.cartas[46].num = 8;
+	d.cartas[46].naipe[10] = 'ouro';
+	d.cartas[47].num = 9;
+	d.cartas[47].naipe[10] = 'ouro';
+	d.cartas[48].num = 10;
+	d.cartas[48].naipe[10] = 'ouro';
+	d.cartas[49].num = 11;
+	d.cartas[49].naipe[10] = 'ouro';
+	d.cartas[50].num = 12;
+	d.cartas[50].naipe[10] = 'ouro';
+	d.cartas[51].num = 13;
+	d.cartas[51].naipe[10] = 'ouro';
+}
+
+typedef struct sDeque{
+	int inicio, fim, quantidade;
+	Baralho cartas[52];
+} Deque;
+
+Deque *criaDeque(){
+	Deque *d;
+	d = (Deque*)malloc(sizeof(Deque));
+	
+	if(d == NULL){
+		printf("Erro na alocacao!\n");
+	}
+	
+	d->inicio = 0;
+	d->fim = 0;
+	d->quantidade = 0;
+	
+	return 0;
+}
+
+
+
+int main(){
+	Deque *d;
+}
